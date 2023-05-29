@@ -2,7 +2,7 @@ import {KEYCODE_A, KEYCODE_D, KEYCODE_ESCAPE, KEYCODE_S, KEYCODE_SPACE} from "./
 import {addElementToGameField, createBullet, createInvader} from "./objects.mjs";
 import {convertRemToPixels, getPxNumber, isColliding, moveX, moveY} from "./physics.mjs";
 import {EXPLOSION, LASER_SHOOT, playSound, playSoundRepeating} from "./audio.mjs";
-import {getHighScore, incrementHighScore} from "./state.mjs";
+import {getHighScore, incrementHighScore, solidifyHighScore} from "./state.mjs";
 
 let keyPressedArray = [];
 const player = document.getElementById("player");
@@ -111,10 +111,12 @@ let heatDamage = 0;
 
 function die() {
     window.location.replace("/dead");
+    solidifyHighScore();
 }
 
 function victory() {
     window.location.replace(`/game/?${invaderSpawnAmount + 1}-${fireSpeed * 2 / 3}`);
+    solidifyHighScore();
 }
 
 function incrementAndDisplayHighScore(delta){
