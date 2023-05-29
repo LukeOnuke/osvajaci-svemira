@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/main.css">
-    <title>Game</title>
+    <title>Osvajaci Svemira | Game</title>
 </head>
 <body>
-    <div id="gameField">
-        <!-- <div class="moveable invader collider"></div> -->
-        <div class="bullet collider"></div>
-        <div id="player" class="collider"></div>
+    <div class="flex center-x">
+        <div id="gameField">
+<!--            <div class="moveable invader collider"></div>-->
+<!--            <div class="bullet collider"></div>-->
+            <div id="player" class="collider"></div>
+        </div>
+    </div>
+    <div class="hud">
+        <p id="currentLevel"></p>
+        <p id="highScore"></p>
     </div>
 </body>
 <script src="/js/game/state.mjs" type="module"></script>

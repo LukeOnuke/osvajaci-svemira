@@ -18,10 +18,13 @@ export function moveY(element, delta){
 export function moveX(element, delta){
     const left = getPxNumber(element.style.left) + delta;
     element.style.left = left + "px";
-    console.log(left, element, delta);
     return left;
 }
 
 export function getPxNumber(px){
     return Number(px.split("px")[0]);
+}
+
+export function convertRemToPixels(rem) {
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
